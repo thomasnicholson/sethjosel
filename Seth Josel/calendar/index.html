@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="seth josel guitar contemporary music new music"></meta>
+	<meta name="description" content="Seth Josel, guitarist, soloist, chamber music partner, ensemble player, improviser. Seth Josel's' instrumental versatility and adaptability make him one of the most sought after guitarists in the New Art Music arena.">
+	<!-- CSS -->
+	<link rel="stylesheet" href="/assets/css/josel.css" type="text/css" />
+	<title>Calendar</title>
+	<!-- JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	<script type="text/javascript" src="/assets/javascript/josel.js" defer></script>
+	<script>
+		$(function(){
+			$("#calendar").sheetrock({
+				url: "https://docs.google.com/spreadsheets/d/1NrxhhPT1eFjbfUv_MC14wjbxghYw7Ez6q7OHLSC10dM/edit#gid=0",
+				query: "select A, B, C order by A DESC ",
+				labels: ['date', 'location', 'info'],
+				rowTemplate: Handlebars.compile($("#template-calendar").html()),
+				callback: () => {
+					$(".spinner-container").css("display", "none");
+					$(".hidden").css("display", "block");
+				} 
+			});
+		});
+	</script>
+</head>
+<body>
+	<!-- Page header and navigation -->
+	<div class="landing-section"></div>
+
+	<div class="spinner-container">
+		<div class="spinner">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	
+	<!-- Page content -->
+	<div class="site-container hidden">
+		
+		<h1>Calendar</h1>
+		
+		<div class="text" id="calendar">
+			<script id="template-calendar" type="text/x-handlebars-template">
+				<p><b>{{cells.date}}</b> &ndash; <i>in {{cells.location}}</i><br>{{cells.info}}</p>
+			</script>
+		</div>
+		
+	</div>
+	
+	<!-- Page footer -->
+	<div class="footer hidden"></div>
+	
+</body>
+</html>
