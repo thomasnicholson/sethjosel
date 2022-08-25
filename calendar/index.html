@@ -13,9 +13,10 @@
 	<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-	<script type="text/javascript" src="../assets/javascript/josel.js" defer></script>
 	<script>
 		$(function(){
+			$(".landing-section").load("../components/navigation.html");
+			$(".footer").load("../components/footer.html");
 			$("#calendar").sheetrock({
 				url: "https://docs.google.com/spreadsheets/d/1NrxhhPT1eFjbfUv_MC14wjbxghYw7Ez6q7OHLSC10dM/edit#gid=0",
 				query: "select A, B, C order by A DESC ",
