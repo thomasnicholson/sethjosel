@@ -13,9 +13,10 @@
 	<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-	<script type="text/javascript" src="../assets/javascript/josel.js" defer></script>
 	<script>
 		$(function(){
+			$(".landing-section").load("../components/navigation.html");
+			$(".footer").load("../components/footer.html");
 			$("#biography").sheetrock({
 				url: "https://docs.google.com/spreadsheets/d/1J1UoPmQlv2Bj6vegMM9-hVrf8mqgE7JzQjui2FaEtxU/edit#gid=0",
 				query: "select A",
