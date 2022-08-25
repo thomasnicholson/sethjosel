@@ -57,7 +57,8 @@
 		
 		<div class="text" id="calendar">
 			<script id="template-calendar" type="text/x-handlebars-template">
-				<p><b>{{cells.date}}</b> &ndash; <i>in {{cells.location}}</i><br>{{cells.info}}</p>
+				<div>{{cells.date}} in {{cells.location}}</div>
+				<div class="what">{{cells.info}}</div>
 			</script>
 		</div>
 		

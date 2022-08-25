@@ -74,46 +74,44 @@
 		<h1>Repertoire</h1>
 
         <div class="text">
-            <p><i>Premiered works indicated by an asterix (*)</i></p>
+            <p>Premiered works indicated with an asterix (*)</p>
         </div>
 
-        <h2>Solo</h2>
+        <h2>Solo works</h2>
 		
 		<div class="text" id="solo">
 			<script id="template-solo" type="text/x-handlebars-template">
-                <p><i>{{cells.last}}, {{cells.first}}</i> &ndash; <b>{{cells.title}}</b>{{cells.premiere}} {{cells.info}}</p>
+                <p><i>{{cells.last}}, {{cells.first}}</i> &ndash; {{cells.title}}{{cells.premiere}} {{cells.info}}</p>
 			</script>
 		</div>
         
         <br>
 
-        <h2>Chamber</h2>
-		
-		<div class="text" id="chamber">
-			<script id="template-chamber" type="text/x-handlebars-template">
-                <p><i>{{cells.last}}, {{cells.first}}</i> &ndash; <b>{{cells.title}}</b>{{cells.premiere}} {{cells.info}}</p>
-			</script>
-		</div>
-
-        <br>
-
-        <h2>Ensemble</h2>
-		
-		<div class="text" id="ensemble">
-			<script id="template-ensemble" type="text/x-handlebars-template">
-                <p><i>{{cells.last}}, {{cells.first}}</i> &ndash; <b>{{cells.title}}</b>{{cells.premiere}} {{cells.info}}</p>
-			</script>
-		</div>
-
-        <br>
-
-        <h2>Concerto</h2>
+		<h2>Solo with ensemble/orchestra</h2>
 		
 		<div class="text" id="concerto">
 			<script id="template-concerto" type="text/x-handlebars-template">
-                <p><i>{{cells.last}}, {{cells.first}}</i> &ndash; <b>{{cells.title}}</b>{{cells.premiere}} {{cells.info}}</p>
+                <p><i>{{cells.last}}, {{cells.first}}</i> &ndash; {{cells.title}}{{cells.premiere}} {{cells.info}}</p>
 			</script>
 		</div>
+
+        <h2>Chamber music (selection)</h2>
+		
+		<div class="text" id="chamber">
+			<script id="template-chamber" type="text/x-handlebars-template">
+                <p><i>{{cells.last}}, {{cells.first}}</i> &ndash; {{cells.title}}{{cells.premiere}} {{cells.info}}</p>
+			</script>
+		</div>
+
+        <br>
+
+        <h2>Ensemble/orchestral/choral (selection)</h2>
+		
+		<div class="text" id="ensemble">
+			<script id="template-ensemble" type="text/x-handlebars-template">
+                <p><i>{{cells.last}}, {{cells.first}}</i> &ndash; {{cells.title}}{{cells.premiere}} {{cells.info}}</p>
+			</script>
+		</div>        
 		
 	</div>
 		
