@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="seth josel guitar contemporary music new music"></meta>
+	<meta name="description" content="Seth Josel, guitarist, soloist, chamber music partner, ensemble player, improviser. Seth Josel's' instrumental versatility and adaptability make him one of the most sought after guitarists in the New Art Music arena.">
+	<!-- CSS -->
+	<link rel="stylesheet" href="../assets/css/josel.css" type="text/css" />
+	<title>Discography</title>
+	<!-- JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	<script>
+		$(function(){
+			$(".landing-section").load("../components/navigation.html");
+			$(".footer").load("../components/footer.html");
+			$("#solo-recordings").sheetrock({
+				url: "https://docs.google.com/spreadsheets/d/1rv35nuy3kPW17TWjhMpCyogkjI8wyO4AF__Ci7vF05g/edit#gid=0",
+				query: "select A, B, C, D where A != 'title' order by B, C",
+				labels: ['title', 'year', 'label', 'info'],
+				rowTemplate: Handlebars.compile($("#template-solo-recordings").html()),
+				callback: () => {
+					$(".spinner-container").css("display", "none");
+					$(".hidden").css("display", "block");
+				} 
+			});
+            $("#ensemble-recordings").sheetrock({
+				url: "https://docs.google.com/spreadsheets/d/1rv35nuy3kPW17TWjhMpCyogkjI8wyO4AF__Ci7vF05g/edit#gid=1993071688",
+				query: "select A, B, C, D where A != 'title' order by B, D",
+				labels: ['title', 'year', 'label', 'info'],
+				rowTemplate: Handlebars.compile($("#template-ensemble-recordings").html())
+			});
+            $("#radio-recordings").sheetrock({
+				url: "https://docs.google.com/spreadsheets/d/1rv35nuy3kPW17TWjhMpCyogkjI8wyO4AF__Ci7vF05g/edit#gid=2094763632",
+				query: "select A",
+				labels: ['info'],
+				rowTemplate: Handlebars.compile($("#template-radio-recordings").html())
+			});
+            // $("#ensemble").sheetrock({
+			// 	url: "https://docs.google.com/spreadsheets/d/1RRAKAtOg-j19_fMsalPOw97TCkrTPBbDR7oikN1PODI/edit#gid=1216804949",
+			// 	query: "select A, B, C, D, E where C != 'work' order by B, C",
+			// 	labels: ['first', 'last', 'title', 'info', 'premiere'],
+			// 	rowTemplate: Handlebars.compile($("#template-ensemble").html())
+			// });
+            // $("#concerto").sheetrock({
+			// 	url: "https://docs.google.com/spreadsheets/d/1RRAKAtOg-j19_fMsalPOw97TCkrTPBbDR7oikN1PODI/edit#gid=25332261",
+			// 	query: "select A, B, C, D, E where C != 'work' order by B, C",
+			// 	labels: ['first', 'last', 'title', 'info', 'premiere'],
+			// 	rowTemplate: Handlebars.compile($("#template-concerto").html())
+			// });
+		});
+	</script>
+</head>
+<body>
+	<!-- Page header and navigation -->
+	<div class="landing-section"></div>
+
+	<div class="spinner-container">
+		<div class="spinner">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	
+	<!-- Page content -->
+	<div class="site-container hidden">
+		
+		<h1>Repertoire</h1>
+
+		<div class="text">
+			<a href="#solo-recordings-category" class="category">Solo recordings</a>
+            <a href="#ensemble-recordings-category" class="category">Ensemble recordings</a>
+			<a href="#radio-recordings-category" class="category">Radio recordings and broadcasts</a>
+        </div>
+
+        <br>
+
+		<a id="solo-recordings-category" class="anchor"></a>
+        <h2>Solo recordings</h2>
+		<div class="text" id="solo-recordings">
+			<script id="template-solo-recordings" type="text/x-handlebars-template">
+                <p>
+                    <span>{{cells.title}}</span> on {{cells.label}} ({{cells.year}})
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;{{cells.info}}</p>
+			</script>
+		</div>
+        
+        <br>
+
+		<a id="ensemble-recordings-category" class="anchor"></a>
+        <h2>Ensemble recordings</h2>
+		<div class="text" id="ensemble-recordings">
+			<script id="template-ensemble-recordings" type="text/x-handlebars-template">
+                <p>
+                    <span>{{cells.title}}</span> on {{cells.label}} ({{cells.year}})
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;with {{cells.info}}</p>
+			</script>
+		</div>
+
+        <br>
+
+        <a id="radio-recordings-category" class="anchor"></a>
+        <h2>Radio recordings and broadcasts</h2>
+		<div class="text" id="radio-recordings">
+			<script id="template-radio-recordings" type="text/x-handlebars-template">
+                <p>{{cells.info}}</p>
+			</script>
+		</div>
+
+	<div class="footer hidden"></div>
+	
+</body>
+</html>

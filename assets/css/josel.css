@@ -3,6 +3,12 @@
   src: url(../fonts/NicholsonGothic-Regular.otf);
 }
 
+@font-face {
+  font-family: "Nicholson Gothic";
+  src: url(../fonts/NicholsonGothic-Bold.otf);
+  font-weight: bold;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -49,11 +55,6 @@ a {
 
 a:hover {
   color: indianred;
-}
-
-.action {
-  font-size: 1.3rem;
-  white-space: nowrap;
 }
 
 h1 {
@@ -103,6 +104,7 @@ h2 {
 @media only screen and (max-width: 620px) {
   .landing-img {
     content: url("../../images/josel_closeup_crop.jpg");
+    padding-top: 2rem;
   }
 }
 
@@ -252,22 +254,35 @@ h2 {
 
 @media only screen and (max-width: 620px) {
   .bio-snippet {
-    padding-top: 1rem;
+    padding-top: 6rem;
     font-size: 1.15rem;
     line-height: 1.4rem;
   }
 }
 
-#biography {
+.bio-snippet .action {
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 620px) {
+  .bio-snippet .action {
+    font-size: 1.15rem;
+  }
+}
+
+#biography, #press {
   -webkit-columns: 2;
           columns: 2;
+  -webkit-column-gap: 4rem;
+          column-gap: 4rem;
   -webkit-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
 }
 
 @media only screen and (max-width: 820px) {
-  #biography {
+  #biography, #press {
     -webkit-columns: 1;
             columns: 1;
   }
@@ -294,6 +309,21 @@ h2 {
   padding: 0 0 0.6rem 2.5rem;
 }
 
+.text .category {
+  padding-right: 0.8rem;
+}
+
+.text span {
+  color: indianred;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -4.5rem;
+  visibility: hidden;
+}
+
 .hidden {
   display: none;
 }
@@ -312,6 +342,12 @@ h2 {
 
 .footer .current-year {
   display: inline;
+}
+
+.reviewer {
+  text-align: right;
+  color: indianred;
+  padding-bottom: 4rem;
 }
 
 @-webkit-keyframes spinner {

@@ -77,40 +77,48 @@
         <div class="text">
             <p>Premiered works indicated with an asterix (*)</p>
         </div>
+		<div class="text">
+			<a href="#solo-category" class="category">Solo works</a>
+            <a href="#concerto-category" class="category">Solo with ensemble/orchestra</a>
+			<a href="#chamber-category" class="category">Chamber music</a>
+			<a href="#orchestral-category" class="category">Ensemble/orchestral/choral</a>
+        </div>
 
+		<br>
+
+		<a id="solo-category" class="anchor"></a>
         <h2>Solo works</h2>
-		
 		<div class="text" id="solo">
 			<script id="template-solo" type="text/x-handlebars-template">
-                <p><i>{{cells.last}}, {{cells.first}}</i> &ndash; {{cells.title}}{{cells.premiere}} {{cells.info}}</p>
+                <p>{{cells.last}}, {{cells.first}} &ndash; <span>{{cells.title}}</span>{{cells.premiere}} {{cells.info}}</p>
 			</script>
 		</div>
         
         <br>
 
+		<a id="concerto-category" class="anchor"></a>
 		<h2>Solo with ensemble/orchestra</h2>
-		
 		<div class="text" id="concerto">
 			<script id="template-concerto" type="text/x-handlebars-template">
-                <p><i>{{cells.last}}, {{cells.first}}</i> &ndash; {{cells.title}}{{cells.premiere}} {{cells.info}}</p>
+                <p>{{cells.last}}, {{cells.first}} &ndash; <span>{{cells.title}}</span>{{cells.premiere}} {{cells.info}}</p>
 			</script>
 		</div>
 
+		<a id="chamber-category" class="anchor"></a>
         <h2>Chamber music (selection)</h2>
-		
 		<div class="text" id="chamber">
 			<script id="template-chamber" type="text/x-handlebars-template">
-                <p><i>{{cells.last}}, {{cells.first}}</i> &ndash; {{cells.title}}{{cells.premiere}} {{cells.info}}</p>
+                <p>{{cells.last}}, {{cells.first}} &ndash; <span>{{cells.title}}</span>{{cells.premiere}} {{cells.info}}</p>
 			</script>
 		</div>
 
         <br>
 
+		<a id="orchestral-category" class="anchor"></a>
         <h2>Ensemble/orchestral/choral (selection)</h2>
-		
 		<div class="text" id="ensemble">
 			<script id="template-ensemble" type="text/x-handlebars-template">
-                <p><i>{{cells.last}}, {{cells.first}}</i> &ndash; {{cells.title}}{{cells.premiere}} {{cells.info}}</p>
+                <p>{{cells.last}}, {{cells.first}} &ndash; <span>{{cells.title}}</span>{{cells.premiere}} {{cells.info}}</p>
 			</script>
 		</div>        
 		

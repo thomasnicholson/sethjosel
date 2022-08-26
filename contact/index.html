@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="seth josel guitar contemporary music new music"></meta>
+    <meta name="description" content="Seth Josel, guitarist, soloist, chamber music partner, ensemble player, improviser. Seth Josel's' instrumental versatility and adaptability make him one of the most sought after guitarists in the New Art Music arena.">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/josel.css" type="text/css" />
+    <title>Press</title>
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script>
+        $(function(){
+            $(".landing-section").load("../components/navigation.html");
+            $(".footer").load("../components/footer.html");
+        });
+
+        function wj_email() {
+            const w = "wjo";
+            const x = "sel";
+            const y = "ascap";
+            const z = w + x + " (at) " + y + " (dot) com";
+            $("#wj_click").css("display", "none");
+            $("#wj_display").text(z);
+        }
+
+        function sj_email() {
+            const w = "sfj";
+            const x = "osel";
+            const y = "snaf";
+            const z = w + x + " (at) " + y + "u (dot) de";
+            $("#sj_click").css("display", "none");
+            $("#sj_display").text(z);
+        }
+
+    </script>
+</head>
+<body>
+    <!-- Page header and navigation -->
+    <div class="landing-section"></div>
+    
+    <!-- Page content -->
+    <div class="site-container">
+        
+        <h1>Contact</h1>
+
+        <h2>United States</h2>
+
+        <div class="text">
+            <p>
+                Wayne M. Josel<br>
+                ASCAP<br>
+                1900 Broadway<br>
+                New York, NY 10023<br>
+                Tel:  +1 212 621 6172<br>
+                Email: <a href="#" onclick="wj_email()" id="wj_click">click to display</a><span id="wj_display"></span>
+            </p>
+        </div>
+
+        <h2>Germany</h2>
+
+        <div class="text">
+            <p>
+                Seth Josel<br>
+                Schönleinstraße 25<br>
+                10967 Berlin<br>
+                Tel: +49 30 69 56 84 27<br>
+                Cell: +49 176 61 79 92 63<br>
+                Email: <a href="#" onclick="sj_email()" id="sj_click">click to display</a><span id="sj_display"></span>
+            </p>
+        </div>
+                
+    </div>
+    
+    <!-- Page footer -->
+    <div class="footer hidden"></div>
+    
+</body>
+</html>

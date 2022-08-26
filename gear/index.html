@@ -8,7 +8,7 @@
 	<meta name="description" content="Seth Josel, guitarist, soloist, chamber music partner, ensemble player, improviser. Seth Josel's' instrumental versatility and adaptability make him one of the most sought after guitarists in the New Art Music arena.">
 	<!-- CSS -->
 	<link rel="stylesheet" href="../assets/css/josel.css" type="text/css" />
-	<title>Calendar</title>
+	<title>Gear</title>
 	<!-- JavaScript -->
 	<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
@@ -17,11 +17,11 @@
 		$(function(){
 			$(".landing-section").load("../components/navigation.html");
 			$(".footer").load("../components/footer.html");
-			$("#calendar").sheetrock({
-				url: "https://docs.google.com/spreadsheets/d/1NrxhhPT1eFjbfUv_MC14wjbxghYw7Ez6q7OHLSC10dM/edit#gid=0",
-				query: "select A, B, C order by A DESC ",
-				labels: ['date', 'location', 'info'],
-				rowTemplate: Handlebars.compile($("#template-calendar").html()),
+			$("#biography").sheetrock({
+				url: "https://docs.google.com/spreadsheets/d/1Ir_oShRPshfe3vKtAF16rsErIhwAyKZeN9tJ5WhFzHE/edit#gid=0",
+				query: "select A",
+				labels: ['text'],
+				rowTemplate: Handlebars.compile($("#template-biography").html()),
 				callback: () => {
 					$(".spinner-container").css("display", "none");
 					$(".hidden").css("display", "block");
@@ -54,13 +54,11 @@
 	<!-- Page content -->
 	<div class="site-container hidden">
 		
-		<h1>Calendar</h1>
+		<h1>Gear</h1>
 		
-		<div class="text" id="calendar">
-			<script id="template-calendar" type="text/x-handlebars-template">
-				<p><span>{{cells.date}}</span> in {{cells.location}} 
-					<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;{{cells.info}}</p>
+		<div class="text" id="biography">
+			<script id="template-biography" type="text/x-handlebars-template">
+				<p>{{{cells.text}}}</p>
 			</script>
 		</div>
 		
