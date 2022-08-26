@@ -1,0 +1,530 @@
+@font-face {
+  font-family: "Nicholson Gothic";
+  src: url(../fonts/NicholsonGothic-Regular.otf);
+}
+
+@font-face {
+  font-family: "Nicholson Gothic";
+  src: url(../fonts/NicholsonGothic-Bold.otf);
+  font-weight: bold;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: 'Nicholson Gothic', serif;
+  font-weight: normal;
+}
+
+.site-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1220px) {
+  .site-container {
+    width: 800px;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .site-container {
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .site-container {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0.6rem;
+    width: 100%;
+  }
+}
+
+a {
+  color: cornflowerblue;
+  text-decoration: none;
+  -webkit-transition: color 0.15s ease;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+a:hover {
+  color: indianred;
+}
+
+h1 {
+  padding: 6.5rem 0 1.5rem;
+  font-size: 3.7rem;
+  font-weight: normal;
+  color: indianred;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 620px) {
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+  }
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+.title {
+  width: 100%;
+  position: fixed;
+  padding: 1.2rem 0.8rem 0.6rem;
+  font-size: 2rem;
+  background: black;
+  z-index: 99;
+}
+
+.title a {
+  color: indianred;
+}
+
+.title a:hover {
+  color: white;
+}
+
+.landing-img {
+  content: url("../../images/josel_closeup.jpg");
+  width: 100%;
+  padding-top: 2.5rem;
+}
+
+@media only screen and (max-width: 620px) {
+  .landing-img {
+    content: url("../../images/josel_closeup_crop.jpg");
+    padding-top: 2rem;
+  }
+}
+
+.hamburger {
+  position: fixed;
+  top: 0.2rem;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 99;
+}
+
+.hamburger > div {
+  position: relative;
+  top: 0;
+  left: 0;
+  background: white;
+  height: 3px;
+  width: 60%;
+  -webkit-transition: all  0.4s ease;
+  transition: all  0.4s ease;
+}
+
+.hamburger > div::before, .hamburger > div::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  background: white;
+  width: 100%;
+  height: 3px;
+  -webkit-transition: all  0.4s ease;
+  transition: all  0.4s ease;
+}
+
+.hamburger > div::after {
+  top: 10px;
+}
+
+.menu {
+  position: fixed;
+  top: var(--title_offset);
+  z-index: 10;
+  background: black;
+  width: 0%;
+  height: 0%;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  visibility: hidden;
+}
+
+.menu > div > ul {
+  position: fixed;
+  top: 70px;
+  padding-left: 10px;
+  text-align: center;
+  opacity: 0;
+  width: 100%;
+  visibility: none;
+}
+
+@media only screen and (max-width: 620px) {
+  .menu > div > ul {
+    text-align: left;
+  }
+}
+
+.menu > div > ul > li {
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+.menu > div > ul > li > a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.8rem;
+  -webkit-transition: color 0.15s ease;
+  transition: color 0.15s ease;
+}
+
+@media only screen and (max-width: 620px) {
+  .menu > div > ul > li > a {
+    font-size: 1.5rem;
+  }
+}
+
+.toggler {
+  position: fixed;
+  z-index: 100;
+  height: 50px;
+  width: 50px;
+  top: 0.2rem;
+  right: 0;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.toggler:checked ~ .menu {
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+}
+
+.toggler:checked ~ .menu > div > ul {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.toggler:checked ~ .menu > div > ul > li > a:hover {
+  color: indianred;
+}
+
+.toggler:checked + .hamburger > div {
+  background: rgba(0, 0, 0, 0);
+}
+
+.toggler:checked + .hamburger > div::before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background: white;
+}
+
+.toggler:checked + .hamburger > div::after {
+  top: 0;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  background: white;
+}
+
+.bio-snippet {
+  padding-top: 6rem;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+
+@media only screen and (max-width: 620px) {
+  .bio-snippet {
+    padding-top: 6rem;
+    font-size: 1.15rem;
+    line-height: 1.4rem;
+  }
+}
+
+.bio-snippet .action {
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 620px) {
+  .bio-snippet .action {
+    font-size: 1.15rem;
+  }
+}
+
+#biography, #press {
+  -webkit-columns: 2;
+          columns: 2;
+  -webkit-column-gap: 4rem;
+          column-gap: 4rem;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+@media only screen and (max-width: 820px) {
+  #biography, #press {
+    -webkit-columns: 1;
+            columns: 1;
+  }
+}
+
+.text {
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+}
+
+@media only screen and (max-width: 620px) {
+  .text {
+    padding-top: 1rem;
+    font-size: 1.15rem;
+    line-height: 1.4rem;
+  }
+}
+
+.text p {
+  padding-bottom: 0.6rem;
+}
+
+.text .what {
+  padding: 0 0 0.6rem 2.5rem;
+}
+
+.text .category {
+  padding-right: 0.8rem;
+}
+
+.text span {
+  color: indianred;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -4.5rem;
+  visibility: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 620px) {
+  .footer {
+    padding: 2rem 0 2rem;
+  }
+}
+
+.footer .current-year {
+  display: inline;
+}
+
+.reviewer {
+  text-align: right;
+  color: indianred;
+  padding-bottom: 4rem;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.spinner div {
+  left: 47px;
+  top: 24px;
+  position: absolute;
+  -webkit-animation: spinner linear 1s infinite;
+          animation: spinner linear 1s infinite;
+  background: indianred;
+  width: 6px;
+  height: 12px;
+  border-radius: 3px / 6px;
+  -webkit-transform-origin: 3px 26px;
+          transform-origin: 3px 26px;
+}
+
+@media only screen and (max-width: 620px) {
+  .spinner div {
+    left: 47px;
+    top: 24px;
+    position: absolute;
+    -webkit-animation: spinner linear 1s infinite;
+            animation: spinner linear 1s infinite;
+    background: indianred;
+    width: 6px;
+    height: 12px;
+    border-radius: 3px / 6px;
+    -webkit-transform-origin: 3px 26px;
+            transform-origin: 3px 26px;
+  }
+}
+
+.spinner div:nth-child(1) {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-animation-delay: -0.9166666666666666s;
+          animation-delay: -0.9166666666666666s;
+  background: indianred;
+}
+
+.spinner div:nth-child(2) {
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  -webkit-animation-delay: -0.8333333333333334s;
+          animation-delay: -0.8333333333333334s;
+  background: indianred;
+}
+
+.spinner div:nth-child(3) {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+  -webkit-animation-delay: -0.75s;
+          animation-delay: -0.75s;
+  background: indianred;
+}
+
+.spinner div:nth-child(4) {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-animation-delay: -0.6666666666666666s;
+          animation-delay: -0.6666666666666666s;
+  background: indianred;
+}
+
+.spinner div:nth-child(5) {
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+  -webkit-animation-delay: -0.5833333333333334s;
+          animation-delay: -0.5833333333333334s;
+  background: indianred;
+}
+
+.spinner div:nth-child(6) {
+  -webkit-transform: rotate(150deg);
+          transform: rotate(150deg);
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+  background: indianred;
+}
+
+.spinner div:nth-child(7) {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-animation-delay: -0.4166666666666667s;
+          animation-delay: -0.4166666666666667s;
+  background: indianred;
+}
+
+.spinner div:nth-child(8) {
+  -webkit-transform: rotate(210deg);
+          transform: rotate(210deg);
+  -webkit-animation-delay: -0.3333333333333333s;
+          animation-delay: -0.3333333333333333s;
+  background: indianred;
+}
+
+.spinner div:nth-child(9) {
+  -webkit-transform: rotate(240deg);
+          transform: rotate(240deg);
+  -webkit-animation-delay: -0.25s;
+          animation-delay: -0.25s;
+  background: indianred;
+}
+
+.spinner div:nth-child(10) {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  -webkit-animation-delay: -0.16666666666666666s;
+          animation-delay: -0.16666666666666666s;
+  background: indianred;
+}
+
+.spinner div:nth-child(11) {
+  -webkit-transform: rotate(300deg);
+          transform: rotate(300deg);
+  -webkit-animation-delay: -0.08333333333333333s;
+          animation-delay: -0.08333333333333333s;
+  background: indianred;
+}
+
+.spinner div:nth-child(12) {
+  -webkit-transform: rotate(330deg);
+          transform: rotate(330deg);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  background: indianred;
+}
+
+.spinner-container {
+  width: 64px;
+  height: 64px;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #ffffff;
+  padding-top: 100px;
+}
+
+@media only screen and (max-width: 620px) {
+  .spinner-container {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transform: translateZ(0) scale(0.64);
+          transform: translateZ(0) scale(0.64);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+.spinner div {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+/*# sourceMappingURL=josel_v2.css.map */
