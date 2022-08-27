@@ -7,7 +7,7 @@
         <meta name="keywords" content="seth josel guitar contemporary music new music"></meta>
         <meta name="description" content="Seth Josel, guitarist, soloist, chamber music partner, ensemble player, improviser. Seth Josel's' instrumental versatility and adaptability make him one of the most sought after guitarists in the New Art Music arena.">
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/css/josel_v2.css" type="text/css" />
+        <link rel="stylesheet" href="assets/css/josel_v3.css" type="text/css" />
         <title>Seth Josel: Guitarist</title>
 		<!-- JavaScript -->
 		<!-- JavaScript -->
@@ -19,8 +19,8 @@
 			$(".landing-section").load("components/navigation-index.html");
 			$(".footer").load("components/footer.html");
 			$("#snippet").sheetrock({
-				url: "https://docs.google.com/spreadsheets/d/1J1UoPmQlv2Bj6vegMM9-hVrf8mqgE7JzQjui2FaEtxU/edit#gid=0",
-				query: "select A limit 1",
+				url: "https://docs.google.com/spreadsheets/d/1J1UoPmQlv2Bj6vegMM9-hVrf8mqgE7JzQjui2FaEtxU/edit#gid=1950884986",
+				query: "select A",
 				labels: ['text'],
 				rowTemplate: Handlebars.compile($("#template-biography").html()),
 				callback: () => {
@@ -54,21 +54,21 @@
 
 		<!-- Page content -->
     	<div class="site-container hidden">
-
-			<!-- <h1></h1> -->
 			
 			<div class="bio-snippet" id="snippet">
 				<script id="template-biography" type="text/x-handlebars-template">
-					<p>{{{cells.text}}}<br><br><a href="biography/" class="action">Continue reading &rarr;</a></p>
+					<p>{{{cells.text}}}</p>
 				</script>
 			</div>
+
+			<a href="biography/" class="action">Continue reading</a>
 
 			<img class="landing-img"/>
     		
     	</div>
 
 		<!-- Page footer -->
-		<div class="footer hidden hidden"></div>
+		<div class="footer hidden"></div>
 
     </body>
 </html>

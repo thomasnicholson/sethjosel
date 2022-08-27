@@ -7,7 +7,7 @@
 	<meta name="keywords" content="seth josel guitar contemporary music new music"></meta>
 	<meta name="description" content="Seth Josel, guitarist, soloist, chamber music partner, ensemble player, improviser. Seth Josel's' instrumental versatility and adaptability make him one of the most sought after guitarists in the New Art Music arena.">
 	<!-- CSS -->
-	<link rel="stylesheet" href="../assets/css/josel_v2.css" type="text/css" />
+	<link rel="stylesheet" href="../assets/css/josel_v3.css" type="text/css" />
 	<title>Discography</title>
 	<!-- JavaScript -->
 	<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
@@ -19,7 +19,7 @@
 			$(".footer").load("../components/footer.html");
 			$("#solo-recordings").sheetrock({
 				url: "https://docs.google.com/spreadsheets/d/1rv35nuy3kPW17TWjhMpCyogkjI8wyO4AF__Ci7vF05g/edit#gid=0",
-				query: "select A, B, C, D where A != 'title' order by B, C",
+				query: "select A, B, C, D where A != 'title' order by B DESC, C",
 				labels: ['title', 'year', 'label', 'info'],
 				rowTemplate: Handlebars.compile($("#template-solo-recordings").html()),
 				callback: () => {
@@ -29,7 +29,7 @@
 			});
             $("#ensemble-recordings").sheetrock({
 				url: "https://docs.google.com/spreadsheets/d/1rv35nuy3kPW17TWjhMpCyogkjI8wyO4AF__Ci7vF05g/edit#gid=1993071688",
-				query: "select A, B, C, D where A != 'title' order by B, D",
+				query: "select A, B, C, D where A != 'title' order by B DESC, D",
 				labels: ['title', 'year', 'label', 'info'],
 				rowTemplate: Handlebars.compile($("#template-ensemble-recordings").html())
 			});
@@ -78,7 +78,7 @@
 	<!-- Page content -->
 	<div class="site-container hidden">
 		
-		<h1>Repertoire</h1>
+		<h1>Discography</h1>
 
 		<div class="text">
 			<a href="#solo-recordings-category" class="category">Solo recordings</a>
