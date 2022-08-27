@@ -68,7 +68,7 @@ h1 {
 @media only screen and (max-width: 620px) {
   h1 {
     font-size: 2.5rem;
-    letter-spacing: -1px;
+    padding-top: 6rem;
   }
 }
 
@@ -316,6 +316,7 @@ h3 {
   border-radius: 40px;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  line-height: 4rem;
 }
 
 .action:hover {

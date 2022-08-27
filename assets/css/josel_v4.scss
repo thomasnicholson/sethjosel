@@ -83,7 +83,7 @@ h1 {
 
     @include device(mobile) {
         font-size: 2.5rem;
-        letter-spacing: -1px;
+        padding-top: 6rem;
     }
 }
 
@@ -307,6 +307,7 @@ h3 {
     border: 1px solid $accent-colour-2;
     border-radius: 40px;
     transition: all 0.5s ease;
+    line-height: 4rem;
 
     &:hover {
         color: $accent-colour-1;
