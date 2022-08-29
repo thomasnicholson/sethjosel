@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="seth josel guitar contemporary music new music"></meta>
+	<meta name="description" content="Seth Josel, guitarist, soloist, chamber music partner, ensemble player, improviser. Seth Josel's' instrumental versatility and adaptability make him one of the most sought after guitarists in the New Art Music arena.">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<!-- CSS -->
+	<link rel="stylesheet" href="../assets/css/josel_v4.css" type="text/css" />
+	<title>Publications</title>
+	<!-- JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	<script>
+		$(function(){
+			$(".landing-section").load("../components/navigation.html");
+			$(".footer").load("../components/footer.html");
+			$("#publications").sheetrock({
+				url: "https://docs.google.com/spreadsheets/d/1eA6-5_pYl-8fjv6GCsmRAOHXBb5HdJ_8iBXbYpFQ8k0/edit#gid=0",
+				query: "select A, B, C, D, E, F where A != 'title' order by C DESC, A",
+				labels: ['title', 'co-author', 'year', 'publisher', 'issue', 'number'],
+				rowTemplate: Handlebars.compile($("#template-publications").html()),
+				callback: () => {
+					$(".spinner-container").css("display", "none");
+					$(".hidden").css("display", "block");
+				} 
+			});
+            Handlebars.registerHelper('hasCoAuthor', function(string) {
+                if (string == "") {
+                    return "";
+                } else {
+                    return " (Co-author: "+string+")";
+                }
+            });
+            Handlebars.registerHelper('hasIssue', function(string) {
+                if (string == "") {
+                    return "";
+                } else {
+                    return ", issue "+string;
+                }
+            });
+            Handlebars.registerHelper('hasNumber', function(string) {
+                if (string == "") {
+                    return "";
+                } else {
+                    return ", no. "+string;
+                }
+            });
+		});
+	</script>
+</head>
+<body>
+	<!-- Page header and navigation -->
+	<div class="landing-section"></div>
+
+	<div class="spinner-container">
+		<div class="spinner">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	
+	<!-- Page content -->
+	<div class="site-container hidden">
+		
+		<h1>Publications</h1>
+
+		<div class="text" id="publications">
+			<script id="template-publications" type="text/x-handlebars-template">
+                <p>
+                    <span>{{cells.title}}</span>{{hasCoAuthor cells.co-author}}
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;{{cells.publisher}}{{hasIssue cells.issue}}{{hasNumber cells.number}} ({{cells.year}})
+                </p>
+			</script>
+		</div>
+        
+		
+	</div>
+		
+	</div>
+	
+	<!-- Page footer -->
+	<div class="footer hidden"></div>
+	
+</body>
+</html>

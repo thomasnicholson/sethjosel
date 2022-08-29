@@ -62,7 +62,6 @@ h1 {
   font-size: 3.7rem;
   font-weight: normal;
   color: indianred;
-  text-transform: uppercase;
 }
 
 @media only screen and (max-width: 620px) {
@@ -96,7 +95,8 @@ h3 {
 
 .title a {
   color: indianred;
-  padding-right: 2.2rem;
+  padding-right: 5.35rem;
+  letter-spacing: -1px;
 }
 
 .title a:hover {
